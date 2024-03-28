@@ -56,7 +56,17 @@ createApp({
                 this.activeItem = this.slides.length - 1;
             }
         },
+        startAutoplay() {
+            this.autoScroll = setInterval(this.nextImage, 3000);
+          },
+          stopAutoplay() {
+            clearInterval(this.autoScroll);
+            this.autoScroll = null;
+          },
     },
+    mounted() {
+        this.startAutoplay();
+      },
 }).mount(`#app`);
 
 
