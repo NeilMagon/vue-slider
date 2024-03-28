@@ -42,7 +42,20 @@ createApp({
         }
     },
     methods: {
-        
+        nextImage: function () {
+            if (this.activeItem < this.slides.length - 1) {
+                this.activeItem ++;
+            } else {
+                this.activeItem = 0;
+            }
+        },
+        previousImage: function () {
+            if (this.activeItem > 0) {
+                this.activeItem --;
+            } else {
+                this.activeItem = this.slides.length - 1;
+            }
+        }
     },
 }).mount(`#app`);
 
